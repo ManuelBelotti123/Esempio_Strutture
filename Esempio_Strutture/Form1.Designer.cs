@@ -34,6 +34,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.salva = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cancella = new System.Windows.Forms.Button();
+            this.modifica = new System.Windows.Forms.Button();
+            this.InvioMod = new System.Windows.Forms.Button();
+            this.LabelMod = new System.Windows.Forms.Label();
+            this.InputMod = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nome
@@ -81,18 +87,80 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(437, 12);
+            this.listView1.Location = new System.Drawing.Point(463, 30);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(351, 426);
+            this.listView1.Size = new System.Drawing.Size(308, 385);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(294, 39);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Database Prodotti";
+            // 
+            // cancella
+            // 
+            this.cancella.Location = new System.Drawing.Point(50, 218);
+            this.cancella.Name = "cancella";
+            this.cancella.Size = new System.Drawing.Size(100, 23);
+            this.cancella.TabIndex = 7;
+            this.cancella.Text = "Cancella";
+            this.cancella.UseVisualStyleBackColor = true;
+            this.cancella.Click += new System.EventHandler(this.cancella_Click);
+            // 
+            // modifica
+            // 
+            this.modifica.Location = new System.Drawing.Point(50, 247);
+            this.modifica.Name = "modifica";
+            this.modifica.Size = new System.Drawing.Size(100, 23);
+            this.modifica.TabIndex = 8;
+            this.modifica.Text = "Modifica";
+            this.modifica.UseVisualStyleBackColor = true;
+            this.modifica.Click += new System.EventHandler(this.modifica_Click);
+            // 
+            // InvioMod
+            // 
+            this.InvioMod.Location = new System.Drawing.Point(50, 340);
+            this.InvioMod.Name = "InvioMod";
+            this.InvioMod.Size = new System.Drawing.Size(100, 23);
+            this.InvioMod.TabIndex = 11;
+            this.InvioMod.Text = "Invio";
+            this.InvioMod.UseVisualStyleBackColor = true;
+            this.InvioMod.Click += new System.EventHandler(this.InvioMod_Click);
+            // 
+            // LabelMod
+            // 
+            this.LabelMod.AutoSize = true;
+            this.LabelMod.Location = new System.Drawing.Point(47, 295);
+            this.LabelMod.Name = "LabelMod";
+            this.LabelMod.Size = new System.Drawing.Size(47, 13);
+            this.LabelMod.TabIndex = 10;
+            this.LabelMod.Text = "Modifica";
+            // 
+            // InputMod
+            // 
+            this.InputMod.Location = new System.Drawing.Point(50, 314);
+            this.InputMod.Name = "InputMod";
+            this.InputMod.Size = new System.Drawing.Size(100, 20);
+            this.InputMod.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.InvioMod);
+            this.Controls.Add(this.LabelMod);
+            this.Controls.Add(this.InputMod);
+            this.Controls.Add(this.modifica);
+            this.Controls.Add(this.cancella);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.salva);
             this.Controls.Add(this.label2);
@@ -115,6 +183,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button salva;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button cancella;
+        private System.Windows.Forms.Button modifica;
+        private System.Windows.Forms.Button InvioMod;
+        private System.Windows.Forms.Label LabelMod;
+        private System.Windows.Forms.TextBox InputMod;
     }
 }
 

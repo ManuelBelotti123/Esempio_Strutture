@@ -28,6 +28,10 @@ namespace Esempio_Strutture
             //inizializzazioni
             p = new Prodotto[100];
             dim = 0;
+            //visibilità
+            LabelMod.Visible = false;
+            InputMod.Visible = false;
+            InvioMod.Visible = false;
         }
 
         //funzioni evento
@@ -46,12 +50,54 @@ namespace Esempio_Strutture
             visualizza(p);
         }
 
+        private void cancella_Click(object sender, EventArgs e)
+        {
+            int pos = Ricerca(p, nome.Text, dim);
+            if (pos == -1)
+            {
+                listView1.Items.Clear();
+                listView1.Items.Add("Elemento non trovato");
+                visualizza(p);
+            }
+            else
+            {
+                Cancella(p, pos, ref dim);
+                visualizza(p);
+            }
+        }
+
+        private void modifica_Click(object sender, EventArgs e)
+        {
+            LabelMod.Visible = true;
+            InputMod.Visible = true;
+            InvioMod.Visible = true;
+        }
+
+        private void InvioMod_Click(object sender, EventArgs e)
+        {
+            int pos = Ricerca(p, nome.Text, dim);
+            if (pos == -1)
+            {
+                listView1.Items.Clear();
+                listView1.Items.Add("Elemento non trovato");
+            }
+            else
+            {
+                Modifica(p, InputMod.Text, pos);
+                listView1.Items.Clear();
+            }
+            LabelMod.Visible = false;
+            InputMod.Visible = false;
+            InvioMod.Visible = false;
+            //visualizza
+            visualizza(p);
+        }
+
         //funzioni di servizio
         public string prodstring(Prodotto p)
         {
             return "Nome: " + p.nome + " Prezzo:" + p.prezzo.ToString();
         }
-
         public void visualizza(Prodotto[] p)
         {
             listView1.Items.Clear();
@@ -59,6 +105,31 @@ namespace Esempio_Strutture
             {
                 listView1.Items.Add(prodstring(p[i]));
             }
+        }
+        public int Ricerca(Prodotto[] p, string elemricercato, int dim)
+        {
+            int pos = -1;
+            //ciclo di ricerca
+            for (int i = 0; i < dim; i++)
+            {
+                if (p[i].nome == elemricercato)
+                {
+                    pos = i;
+                }
+            }
+            return pos;
+        }
+        public void Cancella(Prodotto[] p, int pos, ref int dim)
+        {
+            for (int i = pos; i < dim; i++)
+            {
+                p[pos] = p[pos + 1];
+            }
+            dim--;
+        }
+        public void Modifica(Prodotto[] p, string elemricercato, int pos)
+        {
+            p[pos].nome = elemricercato;
         }
     }
 }
