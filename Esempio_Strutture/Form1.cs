@@ -54,12 +54,14 @@ namespace Esempio_Strutture
         private void cancella_Click(object sender, EventArgs e)
         {
             int pos = Ricerca(p, nome.Text, dim);
+            //se non l'elemento non viene trovato
             if (pos == -1)
             {
                 listView1.Items.Clear();
                 listView1.Items.Add("Elemento non trovato");
                 visualizza(p);
             }
+            //altrimenti cancella
             else
             {
                 Cancella(p, pos, ref dim);
@@ -69,6 +71,7 @@ namespace Esempio_Strutture
 
         private void modifica_Click(object sender, EventArgs e)
         {
+            //imposto visibili le etichette e le textbox che servono per la modifica
             LabelMod.Visible = true;
             InputMod.Visible = true;
             PrezzoMod.Visible = true;
@@ -78,16 +81,19 @@ namespace Esempio_Strutture
         private void InvioMod_Click(object sender, EventArgs e)
         {
             int pos = Ricerca(p, nome.Text, dim);
+            //se non è stato trovato l'elemento cercato
             if (pos == -1)
             {
                 listView1.Items.Clear();
                 listView1.Items.Add("Elemento non trovato");
             }
+            //altrimenti
             else
             {
                 Modifica(p, InputMod.Text, float.Parse(PrezzoMod.Text), pos);
                 listView1.Items.Clear();
             }
+            //nascondo le etichette e textbox che non servono più
             LabelMod.Visible = false;
             InputMod.Visible = false;
             PrezzoMod.Visible = false;
@@ -103,6 +109,7 @@ namespace Esempio_Strutture
         }
         public void visualizza(Prodotto[] p)
         {
+            //stampa
             listView1.Items.Clear();
             for (int i = 0; i < dim; i++)
             {
@@ -115,6 +122,7 @@ namespace Esempio_Strutture
             //ciclo di ricerca
             for (int i = 0; i < dim; i++)
             {
+                //se l'elemento ricercato viene trovato
                 if (p[i].nome == elemricercato)
                 {
                     pos = i;
@@ -124,6 +132,7 @@ namespace Esempio_Strutture
         }
         public void Cancella(Prodotto[] p, int pos, ref int dim)
         {
+            //ciclo con cui i valori slittano tutti di uno a sinistra
             for (int i = pos; i < dim; i++)
             {
                 p[pos] = p[pos + 1];
@@ -132,7 +141,9 @@ namespace Esempio_Strutture
         }
         public void Modifica(Prodotto[] p, string elemricercato, float prezzo, int pos)
         {
+            //modifica del primo campo
             p[pos].nome = elemricercato;
+            //modifica del secondo campo
             p[pos].prezzo = prezzo;
         }
     }
