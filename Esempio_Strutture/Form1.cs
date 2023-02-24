@@ -43,10 +43,13 @@ namespace Esempio_Strutture
 
         private void salva_Click(object sender, EventArgs e)
         {
-            //riempio la variabile dell'struct
-            p[dim].nome = nome.Text;
-            p[dim].prezzo = float.Parse(prezzo.Text);
-            dim++;
+            if (dim < 100)
+            {
+                //riempio la variabile dell'struct
+                p[dim].nome = nome.Text;
+                p[dim].prezzo = float.Parse(prezzo.Text);
+                dim++;
+            }
             //visualizzazione
             visualizza(p);
         }
@@ -57,8 +60,7 @@ namespace Esempio_Strutture
             //se non l'elemento non viene trovato
             if (pos == -1)
             {
-                listView1.Items.Clear();
-                listView1.Items.Add("Elemento non trovato");
+                MessageBox.Show("Elemento non trovato");
                 visualizza(p);
             }
             //altrimenti cancella
@@ -66,6 +68,7 @@ namespace Esempio_Strutture
             {
                 Cancella(p, pos, ref dim);
                 visualizza(p);
+                MessageBox.Show("Elemento cancellato correttamente");
             }
         }
 
@@ -84,14 +87,15 @@ namespace Esempio_Strutture
             //se non è stato trovato l'elemento cercato
             if (pos == -1)
             {
-                listView1.Items.Clear();
-                listView1.Items.Add("Elemento non trovato");
+                MessageBox.Show("Elemento non trovato");
+                visualizza(p);
             }
             //altrimenti
             else
             {
                 Modifica(p, InputMod.Text, float.Parse(PrezzoMod.Text), pos);
                 listView1.Items.Clear();
+                MessageBox.Show("Elemento modificato correttamente");
             }
             //nascondo le etichette e textbox che non servono più
             LabelMod.Visible = false;
@@ -140,12 +144,17 @@ namespace Esempio_Strutture
         }
         public void Cancella(Prodotto[] p, int pos, ref int dim)
         {
-            //ciclo con cui i valori slittano tutti di uno a sinistra
-            for (int i = pos; i < dim; i++)
+            //assicura che l'utente voglia cancellare l'elemento
+            var risp = MessageBox.Show("Vuoi realemente cancellare questo elemento?", "Form Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (risp == DialogResult.Yes)
             {
-                p[pos] = p[pos + 1];
+                //ciclo con cui i valori slittano tutti di uno a sinistra
+                for (int i = pos; i < dim; i++)
+                {
+                    p[pos] = p[pos + 1];
+                }
+                dim--;
             }
-            dim--;
         }
         public void Modifica(Prodotto[] p, string elemricercato, float prezzo, int pos)
         {
