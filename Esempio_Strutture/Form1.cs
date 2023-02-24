@@ -68,7 +68,6 @@ namespace Esempio_Strutture
             {
                 Cancella(p, pos, ref dim);
                 visualizza(p);
-                MessageBox.Show("Elemento cancellato correttamente");
             }
         }
 
@@ -154,6 +153,11 @@ namespace Esempio_Strutture
                     p[pos] = p[pos + 1];
                 }
                 dim--;
+                MessageBox.Show("Elemento cancellato correttamente");
+            }
+            else
+            {
+                MessageBox.Show("Elemento non trovato");
             }
         }
         public void Modifica(Prodotto[] p, string elemricercato, float prezzo, int pos)
