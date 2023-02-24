@@ -102,6 +102,14 @@ namespace Esempio_Strutture
             visualizza(p);
         }
 
+        private void Ordina_Click(object sender, EventArgs e)
+        {
+            //ordina
+            Sort(p, dim);
+            //stampa
+            visualizza(p);
+        }
+
         //funzioni di servizio
         public string prodstring(Prodotto p)
         {
@@ -145,6 +153,29 @@ namespace Esempio_Strutture
             p[pos].nome = elemricercato;
             //modifica del secondo campo
             p[pos].prezzo = prezzo;
+        }
+
+        public void Sort(Prodotto[] p, int dim)
+        {
+            //dichiarazioni
+            int x, y;
+            string sup;
+            //bubblesort
+            for (x = 0; x < dim - 1; x++)
+            {
+                //confronta le coppie 
+                for (y = 0; y < dim - 1 - x; y++)
+                {
+                    //nel caso trovo una coppia da scambiare
+                    if (string.Compare(p[y].nome, p[y + 1].nome) > 0)
+                    {
+                        sup = p[y].nome;
+                        //avviene lo scambio
+                        p[y].nome = p[y + 1].nome;
+                        p[y + 1].nome = sup;
+                    }
+                }
+            }
         }
     }
 }

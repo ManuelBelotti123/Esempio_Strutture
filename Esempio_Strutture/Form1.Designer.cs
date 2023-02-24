@@ -41,6 +41,7 @@
             this.LabelMod = new System.Windows.Forms.Label();
             this.InputMod = new System.Windows.Forms.TextBox();
             this.PrezzoMod = new System.Windows.Forms.TextBox();
+            this.Ordina = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nome
@@ -52,7 +53,7 @@
             // 
             // prezzo
             // 
-            this.prezzo.Location = new System.Drawing.Point(50, 147);
+            this.prezzo.Location = new System.Drawing.Point(50, 137);
             this.prezzo.Name = "prezzo";
             this.prezzo.Size = new System.Drawing.Size(100, 20);
             this.prezzo.TabIndex = 1;
@@ -69,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 130);
+            this.label2.Location = new System.Drawing.Point(47, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // salva
             // 
-            this.salva.Location = new System.Drawing.Point(50, 189);
+            this.salva.Location = new System.Drawing.Point(50, 163);
             this.salva.Name = "salva";
             this.salva.Size = new System.Drawing.Size(100, 23);
             this.salva.TabIndex = 4;
@@ -107,7 +108,7 @@
             // 
             // cancella
             // 
-            this.cancella.Location = new System.Drawing.Point(50, 218);
+            this.cancella.Location = new System.Drawing.Point(50, 192);
             this.cancella.Name = "cancella";
             this.cancella.Size = new System.Drawing.Size(100, 23);
             this.cancella.TabIndex = 7;
@@ -117,7 +118,7 @@
             // 
             // modifica
             // 
-            this.modifica.Location = new System.Drawing.Point(50, 247);
+            this.modifica.Location = new System.Drawing.Point(50, 221);
             this.modifica.Name = "modifica";
             this.modifica.Size = new System.Drawing.Size(100, 23);
             this.modifica.TabIndex = 8;
@@ -158,11 +159,22 @@
             this.PrezzoMod.Size = new System.Drawing.Size(100, 20);
             this.PrezzoMod.TabIndex = 12;
             // 
+            // Ordina
+            // 
+            this.Ordina.Location = new System.Drawing.Point(50, 250);
+            this.Ordina.Name = "Ordina";
+            this.Ordina.Size = new System.Drawing.Size(100, 23);
+            this.Ordina.TabIndex = 13;
+            this.Ordina.Text = "Ordina";
+            this.Ordina.UseVisualStyleBackColor = true;
+            this.Ordina.Click += new System.EventHandler(this.Ordina_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Ordina);
             this.Controls.Add(this.PrezzoMod);
             this.Controls.Add(this.InvioMod);
             this.Controls.Add(this.LabelMod);
@@ -199,6 +211,7 @@
         private System.Windows.Forms.Label LabelMod;
         private System.Windows.Forms.TextBox InputMod;
         private System.Windows.Forms.TextBox PrezzoMod;
+        private System.Windows.Forms.Button Ordina;
     }
 }
 
