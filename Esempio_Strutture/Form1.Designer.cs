@@ -40,6 +40,7 @@
             this.InvioMod = new System.Windows.Forms.Button();
             this.LabelMod = new System.Windows.Forms.Label();
             this.InputMod = new System.Windows.Forms.TextBox();
+            this.PrezzoMod = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nome
@@ -126,7 +127,7 @@
             // 
             // InvioMod
             // 
-            this.InvioMod.Location = new System.Drawing.Point(50, 340);
+            this.InvioMod.Location = new System.Drawing.Point(50, 366);
             this.InvioMod.Name = "InvioMod";
             this.InvioMod.Size = new System.Drawing.Size(100, 23);
             this.InvioMod.TabIndex = 11;
@@ -150,11 +151,19 @@
             this.InputMod.Size = new System.Drawing.Size(100, 20);
             this.InputMod.TabIndex = 9;
             // 
+            // PrezzoMod
+            // 
+            this.PrezzoMod.Location = new System.Drawing.Point(50, 340);
+            this.PrezzoMod.Name = "PrezzoMod";
+            this.PrezzoMod.Size = new System.Drawing.Size(100, 20);
+            this.PrezzoMod.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.PrezzoMod);
             this.Controls.Add(this.InvioMod);
             this.Controls.Add(this.LabelMod);
             this.Controls.Add(this.InputMod);
@@ -189,6 +198,7 @@
         private System.Windows.Forms.Button InvioMod;
         private System.Windows.Forms.Label LabelMod;
         private System.Windows.Forms.TextBox InputMod;
+        private System.Windows.Forms.TextBox PrezzoMod;
     }
 }
 

@@ -31,6 +31,7 @@ namespace Esempio_Strutture
             //visibilità
             LabelMod.Visible = false;
             InputMod.Visible = false;
+            PrezzoMod.Visible = false;
             InvioMod.Visible = false;
         }
 
@@ -70,6 +71,7 @@ namespace Esempio_Strutture
         {
             LabelMod.Visible = true;
             InputMod.Visible = true;
+            PrezzoMod.Visible = true;
             InvioMod.Visible = true;
         }
 
@@ -83,11 +85,12 @@ namespace Esempio_Strutture
             }
             else
             {
-                Modifica(p, InputMod.Text, pos);
+                Modifica(p, InputMod.Text, float.Parse(PrezzoMod.Text), pos);
                 listView1.Items.Clear();
             }
             LabelMod.Visible = false;
             InputMod.Visible = false;
+            PrezzoMod.Visible = false;
             InvioMod.Visible = false;
             //visualizza
             visualizza(p);
@@ -127,9 +130,10 @@ namespace Esempio_Strutture
             }
             dim--;
         }
-        public void Modifica(Prodotto[] p, string elemricercato, int pos)
+        public void Modifica(Prodotto[] p, string elemricercato, float prezzo, int pos)
         {
             p[pos].nome = elemricercato;
+            p[pos].prezzo = prezzo;
         }
     }
 }
