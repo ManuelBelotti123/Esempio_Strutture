@@ -43,6 +43,10 @@
             this.PrezzoMod = new System.Windows.Forms.TextBox();
             this.Ordina = new System.Windows.Forms.Button();
             this.SommaPrezzi = new System.Windows.Forms.Button();
+            this.perc = new System.Windows.Forms.Button();
+            this.percent = new System.Windows.Forms.TextBox();
+            this.per = new System.Windows.Forms.Label();
+            this.invperc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nome
@@ -180,11 +184,51 @@
             this.SommaPrezzi.UseVisualStyleBackColor = true;
             this.SommaPrezzi.Click += new System.EventHandler(this.SommaPrezzi_Click);
             // 
+            // perc
+            // 
+            this.perc.Location = new System.Drawing.Point(50, 308);
+            this.perc.Name = "perc";
+            this.perc.Size = new System.Drawing.Size(100, 23);
+            this.perc.TabIndex = 15;
+            this.perc.Text = "Percentuale";
+            this.perc.UseVisualStyleBackColor = true;
+            this.perc.Click += new System.EventHandler(this.perc_Click);
+            // 
+            // percent
+            // 
+            this.percent.Location = new System.Drawing.Point(226, 223);
+            this.percent.Name = "percent";
+            this.percent.Size = new System.Drawing.Size(100, 20);
+            this.percent.TabIndex = 16;
+            // 
+            // per
+            // 
+            this.per.AutoSize = true;
+            this.per.Location = new System.Drawing.Point(223, 207);
+            this.per.Name = "per";
+            this.per.Size = new System.Drawing.Size(64, 13);
+            this.per.TabIndex = 17;
+            this.per.Text = "Percentuale";
+            // 
+            // invperc
+            // 
+            this.invperc.Location = new System.Drawing.Point(226, 250);
+            this.invperc.Name = "invperc";
+            this.invperc.Size = new System.Drawing.Size(100, 23);
+            this.invperc.TabIndex = 18;
+            this.invperc.Text = "Invio";
+            this.invperc.UseVisualStyleBackColor = true;
+            this.invperc.Click += new System.EventHandler(this.invperc_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invperc);
+            this.Controls.Add(this.per);
+            this.Controls.Add(this.percent);
+            this.Controls.Add(this.perc);
             this.Controls.Add(this.SommaPrezzi);
             this.Controls.Add(this.Ordina);
             this.Controls.Add(this.PrezzoMod);
@@ -225,6 +269,10 @@
         private System.Windows.Forms.TextBox PrezzoMod;
         private System.Windows.Forms.Button Ordina;
         private System.Windows.Forms.Button SommaPrezzi;
+        private System.Windows.Forms.Button perc;
+        private System.Windows.Forms.TextBox percent;
+        private System.Windows.Forms.Label per;
+        private System.Windows.Forms.Button invperc;
     }
 }
 

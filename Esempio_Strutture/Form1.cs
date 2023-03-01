@@ -33,6 +33,9 @@ namespace Esempio_Strutture
             InputMod.Visible = false;
             PrezzoMod.Visible = false;
             InvioMod.Visible = false;
+            per.Visible = false;
+            percent.Visible = false;
+            invperc.Visible = false;
         }
 
         //funzioni evento
@@ -118,6 +121,25 @@ namespace Esempio_Strutture
             float somma = Somma(p, dim);
             MessageBox.Show("La somma dei prezzi dei prodotti è " + somma, "Somma dei prezzi");
 
+        }
+
+        private void perc_Click(object sender, EventArgs e)
+        {
+            float Perc = 0;
+            bool f = true;
+            per.Visible = true;
+            percent.Visible = true;
+            invperc.Visible = true;
+        }
+
+        private void invperc_Click(object sender, EventArgs e)
+        {
+            bool f = PercentualeRisp();
+            Percentuale(p, dim, f, float.Parse(percent.Text));
+            visualizza(p);
+            per.Visible = false;
+            percent.Visible = false;
+            invperc.Visible = false;
         }
 
         //funzioni di servizio
@@ -206,6 +228,36 @@ namespace Esempio_Strutture
                 somma = somma + p[i].prezzo;
             }
             return somma;
+        }
+
+        public void Percentuale(Prodotto[] p, int dim, bool c, float Perc)
+        {
+            for (int i = 0; i < dim; i++)
+            {
+                if (c)
+                {
+                    p[i].prezzo = p[i].prezzo + ((p[i].prezzo * Perc) / 100);
+                }
+                else
+                {
+                    p[i].prezzo = p[i].prezzo - ((p[i].prezzo * Perc) / 100);
+                }
+            }
+        }
+
+        public bool PercentualeRisp()
+        {
+            bool f;
+            var risp = MessageBox.Show("Vuoi sommare (yes) o sottrarre (no) una percentuale?", "Percentuale", MessageBoxButtons.YesNo);
+            if (risp == DialogResult.Yes)
+            {
+                f = true;
+            }
+            else
+            {
+                f = false;
+            }
+            return f;
         }
     }
 }
