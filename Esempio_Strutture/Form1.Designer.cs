@@ -42,6 +42,7 @@
             this.InputMod = new System.Windows.Forms.TextBox();
             this.PrezzoMod = new System.Windows.Forms.TextBox();
             this.Ordina = new System.Windows.Forms.Button();
+            this.SommaPrezzi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nome
@@ -128,7 +129,7 @@
             // 
             // InvioMod
             // 
-            this.InvioMod.Location = new System.Drawing.Point(50, 366);
+            this.InvioMod.Location = new System.Drawing.Point(226, 150);
             this.InvioMod.Name = "InvioMod";
             this.InvioMod.Size = new System.Drawing.Size(100, 23);
             this.InvioMod.TabIndex = 11;
@@ -139,7 +140,7 @@
             // LabelMod
             // 
             this.LabelMod.AutoSize = true;
-            this.LabelMod.Location = new System.Drawing.Point(47, 295);
+            this.LabelMod.Location = new System.Drawing.Point(223, 79);
             this.LabelMod.Name = "LabelMod";
             this.LabelMod.Size = new System.Drawing.Size(47, 13);
             this.LabelMod.TabIndex = 10;
@@ -147,14 +148,14 @@
             // 
             // InputMod
             // 
-            this.InputMod.Location = new System.Drawing.Point(50, 314);
+            this.InputMod.Location = new System.Drawing.Point(226, 98);
             this.InputMod.Name = "InputMod";
             this.InputMod.Size = new System.Drawing.Size(100, 20);
             this.InputMod.TabIndex = 9;
             // 
             // PrezzoMod
             // 
-            this.PrezzoMod.Location = new System.Drawing.Point(50, 340);
+            this.PrezzoMod.Location = new System.Drawing.Point(226, 124);
             this.PrezzoMod.Name = "PrezzoMod";
             this.PrezzoMod.Size = new System.Drawing.Size(100, 20);
             this.PrezzoMod.TabIndex = 12;
@@ -169,11 +170,22 @@
             this.Ordina.UseVisualStyleBackColor = true;
             this.Ordina.Click += new System.EventHandler(this.Ordina_Click);
             // 
+            // SommaPrezzi
+            // 
+            this.SommaPrezzi.Location = new System.Drawing.Point(50, 279);
+            this.SommaPrezzi.Name = "SommaPrezzi";
+            this.SommaPrezzi.Size = new System.Drawing.Size(100, 23);
+            this.SommaPrezzi.TabIndex = 14;
+            this.SommaPrezzi.Text = "Somma dei prezzi";
+            this.SommaPrezzi.UseVisualStyleBackColor = true;
+            this.SommaPrezzi.Click += new System.EventHandler(this.SommaPrezzi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SommaPrezzi);
             this.Controls.Add(this.Ordina);
             this.Controls.Add(this.PrezzoMod);
             this.Controls.Add(this.InvioMod);
@@ -212,6 +224,7 @@
         private System.Windows.Forms.TextBox InputMod;
         private System.Windows.Forms.TextBox PrezzoMod;
         private System.Windows.Forms.Button Ordina;
+        private System.Windows.Forms.Button SommaPrezzi;
     }
 }
 

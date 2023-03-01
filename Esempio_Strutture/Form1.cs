@@ -113,6 +113,13 @@ namespace Esempio_Strutture
             visualizza(p);
         }
 
+        private void SommaPrezzi_Click(object sender, EventArgs e)
+        {
+            float somma = Somma(p, dim);
+            MessageBox.Show("La somma dei prezzi dei prodotti è " + somma, "Somma dei prezzi");
+
+        }
+
         //funzioni di servizio
         public string prodstring(Prodotto p)
         {
@@ -189,6 +196,16 @@ namespace Esempio_Strutture
                     }
                 }
             }
+        }
+
+        public float Somma(Prodotto[] p, int dim)
+        {
+            float somma = 0;
+            for (int i = 0; i < dim; i++)
+            {
+                somma = somma + p[i].prezzo;
+            }
+            return somma;
         }
     }
 }
