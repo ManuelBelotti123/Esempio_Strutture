@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -118,7 +119,9 @@ namespace Esempio_Strutture
 
         private void SommaPrezzi_Click(object sender, EventArgs e)
         {
+            //richiama la funzione somma
             float somma = Somma(p, dim);
+            //messagebox di conferma
             MessageBox.Show("La somma dei prezzi dei prodotti è " + somma, "Somma dei prezzi");
 
         }
@@ -127,6 +130,7 @@ namespace Esempio_Strutture
         {
             float Perc = 0;
             bool f = true;
+            //imposta la visibilità true
             per.Visible = true;
             percent.Visible = true;
             invperc.Visible = true;
@@ -134,12 +138,27 @@ namespace Esempio_Strutture
 
         private void invperc_Click(object sender, EventArgs e)
         {
+            //a seconda della risposta dell'utente, sottrai o aggiungi la percentuale
             bool f = PercentualeRisp();
             Percentuale(p, dim, f, float.Parse(percent.Text));
             visualizza(p);
+            //visibilità false
             per.Visible = false;
             percent.Visible = false;
             invperc.Visible = false;
+        }
+
+
+
+        private void SalvaFile_Click(object sender, EventArgs e)
+        {
+            // Creating a file
+            string percorso = @"Prodotti.csv";
+            // Appending the given texts
+            using (StreamWriter sw = File.CreateText(percorso))
+            {
+                sw.WriteLine("Ciao");
+            }
         }
 
         //funzioni di servizio
@@ -223,6 +242,7 @@ namespace Esempio_Strutture
         public float Somma(Prodotto[] p, int dim)
         {
             float somma = 0;
+            //ciclo di somma
             for (int i = 0; i < dim; i++)
             {
                 somma = somma + p[i].prezzo;
@@ -232,12 +252,15 @@ namespace Esempio_Strutture
 
         public void Percentuale(Prodotto[] p, int dim, bool c, float Perc)
         {
+            //ciclo di somma della percentuale al prezzo la percentuale
             for (int i = 0; i < dim; i++)
             {
+                //nel caso si voglia aggiungere
                 if (c)
                 {
                     p[i].prezzo = p[i].prezzo + ((p[i].prezzo * Perc) / 100);
                 }
+                //nel caso si voglia sottrarre la percentuale
                 else
                 {
                     p[i].prezzo = p[i].prezzo - ((p[i].prezzo * Perc) / 100);
@@ -248,6 +271,7 @@ namespace Esempio_Strutture
         public bool PercentualeRisp()
         {
             bool f;
+            //scelta tra somma e sottrazione della percentuale
             var risp = MessageBox.Show("Vuoi sommare (yes) o sottrarre (no) una percentuale?", "Percentuale", MessageBoxButtons.YesNo);
             if (risp == DialogResult.Yes)
             {
@@ -258,6 +282,11 @@ namespace Esempio_Strutture
                 f = false;
             }
             return f;
+        }
+
+        public void GenerazioneFile(Prodotto[] p, int dim)
+        {
+
         }
     }
 }

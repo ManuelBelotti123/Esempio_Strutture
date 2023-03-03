@@ -47,6 +47,8 @@
             this.percent = new System.Windows.Forms.TextBox();
             this.per = new System.Windows.Forms.Label();
             this.invperc = new System.Windows.Forms.Button();
+            this.SalvaFile = new System.Windows.Forms.Button();
+            this.LeggiFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nome
@@ -220,11 +222,32 @@
             this.invperc.UseVisualStyleBackColor = true;
             this.invperc.Click += new System.EventHandler(this.invperc_Click);
             // 
+            // SalvaFile
+            // 
+            this.SalvaFile.Location = new System.Drawing.Point(50, 337);
+            this.SalvaFile.Name = "SalvaFile";
+            this.SalvaFile.Size = new System.Drawing.Size(100, 23);
+            this.SalvaFile.TabIndex = 19;
+            this.SalvaFile.Text = "Salva su file";
+            this.SalvaFile.UseVisualStyleBackColor = true;
+            this.SalvaFile.Click += new System.EventHandler(this.SalvaFile_Click);
+            // 
+            // LeggiFile
+            // 
+            this.LeggiFile.Location = new System.Drawing.Point(50, 366);
+            this.LeggiFile.Name = "LeggiFile";
+            this.LeggiFile.Size = new System.Drawing.Size(100, 23);
+            this.LeggiFile.TabIndex = 20;
+            this.LeggiFile.Text = "Leggi da file";
+            this.LeggiFile.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LeggiFile);
+            this.Controls.Add(this.SalvaFile);
             this.Controls.Add(this.invperc);
             this.Controls.Add(this.per);
             this.Controls.Add(this.percent);
@@ -273,6 +296,8 @@
         private System.Windows.Forms.TextBox percent;
         private System.Windows.Forms.Label per;
         private System.Windows.Forms.Button invperc;
+        private System.Windows.Forms.Button SalvaFile;
+        private System.Windows.Forms.Button LeggiFile;
     }
 }
 
