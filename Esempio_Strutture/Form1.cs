@@ -148,12 +148,10 @@ namespace Esempio_Strutture
             invperc.Visible = false;
         }
 
-
-
         private void SalvaFile_Click(object sender, EventArgs e)
         {
-
-
+            GenerazioneFile(p, dim);
+            AperturaFile(p, dim);
         }
 
         //funzioni di servizio
@@ -281,30 +279,39 @@ namespace Esempio_Strutture
 
         public void GenerazioneFile(Prodotto[] p, int dim)
         {
-            string line;
             StreamWriter sw = new StreamWriter("prodotti.txt", false);
-            for (int i = 0; i < 5, i++)
+            for (int i = 0; i < 5; i++)
             {
-                sw.WriteLine(i);
+                sw.WriteLine("nome" + i + ";" + i);
             }
             sw.Close();
         }
 
         public void AperturaFile(Prodotto[] p, int dim)
         {
-            StreamReader sr = new StreamReader("prodotti.txt");
-            //leggo la prima riga
-            line = sr.ReadLine();
-            //controllo se i dati esistono
-            while (line != null)
+            String line;
+            if (File.Exists("prodotti.txt"))
             {
-                //elabora i dati
-                listview1.Items.Add(line);
-                //legge la linea successiva
+                StreamReader sr = new StreamReader("prodotti.txt");
+                //leggo la prima riga
                 line = sr.ReadLine();
+                //controllo se i dati esistono
+                while (line != null)
+                {
+                    //elabora i dati
+                    Elabora(line);
+                    //legge la linea successiva
+                    line = sr.ReadLine();
+                }
+                sr.Close();
             }
-            sr.Close();
-            Console.ReadLine();
+        }
+
+        public void Elabora(String line)
+        {
+            String[] campi = line.Split(';');
+            listView1.Items.Add(campi[0]);
+            listView1.Items.Add(campi[1]);
         }
     }
 }
