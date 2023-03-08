@@ -152,13 +152,8 @@ namespace Esempio_Strutture
 
         private void SalvaFile_Click(object sender, EventArgs e)
         {
-            // Creating a file
-            string percorso = @"Prodotti.csv";
-            // Appending the given texts
-            using (StreamWriter sw = File.CreateText(percorso))
-            {
-                sw.WriteLine("Ciao");
-            }
+
+
         }
 
         //funzioni di servizio
@@ -286,7 +281,30 @@ namespace Esempio_Strutture
 
         public void GenerazioneFile(Prodotto[] p, int dim)
         {
+            string line;
+            StreamWriter sw = new StreamWriter("prodotti.txt", false);
+            for (int i = 0; i < 5, i++)
+            {
+                sw.WriteLine(i);
+            }
+            sw.Close();
+        }
 
+        public void AperturaFile(Prodotto[] p, int dim)
+        {
+            StreamReader sr = new StreamReader("prodotti.txt");
+            //leggo la prima riga
+            line = sr.ReadLine();
+            //controllo se i dati esistono
+            while (line != null)
+            {
+                //elabora i dati
+                listview1.Items.Add(line);
+                //legge la linea successiva
+                line = sr.ReadLine();
+            }
+            sr.Close();
+            Console.ReadLine();
         }
     }
 }
