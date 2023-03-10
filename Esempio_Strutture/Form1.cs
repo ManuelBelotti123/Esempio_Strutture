@@ -18,6 +18,7 @@ namespace Esempio_Strutture
         {
             public string nome;
             public float prezzo;
+            public int quant;
         }
         public Prodotto[] p;
         public int dim;
@@ -53,6 +54,10 @@ namespace Esempio_Strutture
                 p[dim].nome = nome.Text;
                 p[dim].prezzo = float.Parse(prezzo.Text);
                 dim++;
+            }
+            else
+            {
+                MessageBox.Show("Database Pieno", "Attenzione!");
             }
             //visualizzazione
             visualizza(p);
@@ -173,7 +178,7 @@ namespace Esempio_Strutture
         //funzioni di servizio
         public string prodstring(Prodotto p)
         {
-            return "Nome: " + p.nome + " Prezzo:" + p.prezzo.ToString();
+            return "Nome: " + p.nome + " Prezzo:" + p.prezzo.ToString() + " Quantità:" + p.quant.ToString();
         }
         public void visualizza(Prodotto[] p)
         {

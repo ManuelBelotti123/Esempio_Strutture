@@ -91,7 +91,7 @@
             this.salva.Name = "salva";
             this.salva.Size = new System.Drawing.Size(100, 23);
             this.salva.TabIndex = 4;
-            this.salva.Text = "Salva";
+            this.salva.Text = "Aggiungi";
             this.salva.UseVisualStyleBackColor = true;
             this.salva.Click += new System.EventHandler(this.salva_Click);
             // 
