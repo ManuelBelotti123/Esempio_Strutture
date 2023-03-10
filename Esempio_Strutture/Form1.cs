@@ -151,6 +151,10 @@ namespace Esempio_Strutture
         private void SalvaFile_Click(object sender, EventArgs e)
         {
             GenerazioneFile(p, dim);
+        }
+
+        private void LeggiFile_Click(object sender, EventArgs e)
+        {
             AperturaFile(p, dim);
         }
 
@@ -279,10 +283,10 @@ namespace Esempio_Strutture
 
         public void GenerazioneFile(Prodotto[] p, int dim)
         {
-            StreamWriter sw = new StreamWriter("prodotti.txt", false);
-            for (int i = 0; i < 5; i++)
+            StreamWriter sw = new StreamWriter("prodotti.csv", false);
+            for (int i = 0; i < dim; i++)
             {
-                sw.WriteLine("nome" + i + ";" + i);
+                sw.WriteLine("Nome: " + p[i].nome + "  Prezzo: " + p[i].prezzo);
             }
             sw.Close();
         }
@@ -290,9 +294,9 @@ namespace Esempio_Strutture
         public void AperturaFile(Prodotto[] p, int dim)
         {
             String line;
-            if (File.Exists("prodotti.txt"))
+            if (File.Exists("prodotti.csv"))
             {
-                StreamReader sr = new StreamReader("prodotti.txt");
+                StreamReader sr = new StreamReader("prodotti.csv");
                 //leggo la prima riga
                 line = sr.ReadLine();
                 //controllo se i dati esistono
@@ -309,9 +313,24 @@ namespace Esempio_Strutture
 
         public void Elabora(String line)
         {
-            String[] campi = line.Split(';');
-            listView1.Items.Add(campi[0]);
-            listView1.Items.Add(campi[1]);
+            listView1.Items.Add(line);
+        }
+
+        public void Min()
+        {
+            for (int i = 0; i < dim; i++)
+            {
+                float min = p[0].prezzo;
+                if (min < p[i].prezzo)
+                {
+
+                }
+            }
+        }
+
+        public void Max()
+        {
+
         }
     }
 }

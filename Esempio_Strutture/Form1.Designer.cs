@@ -240,6 +240,7 @@
             this.LeggiFile.TabIndex = 20;
             this.LeggiFile.Text = "Leggi da file";
             this.LeggiFile.UseVisualStyleBackColor = true;
+            this.LeggiFile.Click += new System.EventHandler(this.LeggiFile_Click);
             // 
             // Form1
             // 
