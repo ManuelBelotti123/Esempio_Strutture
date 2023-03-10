@@ -158,6 +158,18 @@ namespace Esempio_Strutture
             AperturaFile(p, dim);
         }
 
+        private void Minimo_Click(object sender, EventArgs e)
+        {
+            float min = Min();
+            MessageBox.Show("Il prezzo minimo presente è: " + min, "Minimo");
+        }
+
+        private void Massimo_Click(object sender, EventArgs e)
+        {
+            float max = Max();
+            MessageBox.Show("Il prezzo minimo presente è: " + max, "Massimo");
+        }
+
         //funzioni di servizio
         public string prodstring(Prodotto p)
         {
@@ -316,21 +328,30 @@ namespace Esempio_Strutture
             listView1.Items.Add(line);
         }
 
-        public void Min()
+        public float Min()
         {
+            float min = p[0].prezzo;
             for (int i = 0; i < dim; i++)
             {
-                float min = p[0].prezzo;
-                if (min < p[i].prezzo)
+                if (min > p[i].prezzo)
                 {
-
+                    min = p[i].prezzo;
                 }
             }
+            return min;
         }
 
-        public void Max()
+        public float Max()
         {
-
+            float max = p[0].prezzo;
+            for (int i = 0; i < dim; i++)
+            {
+                if (max < p[i].prezzo)
+                {
+                    max = p[i].prezzo;
+                }
+            }
+            return max;
         }
     }
 }

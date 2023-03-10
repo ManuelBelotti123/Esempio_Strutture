@@ -49,18 +49,20 @@
             this.invperc = new System.Windows.Forms.Button();
             this.SalvaFile = new System.Windows.Forms.Button();
             this.LeggiFile = new System.Windows.Forms.Button();
+            this.Minimo = new System.Windows.Forms.Button();
+            this.Massimo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nome
             // 
-            this.nome.Location = new System.Drawing.Point(50, 97);
+            this.nome.Location = new System.Drawing.Point(41, 76);
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(100, 20);
             this.nome.TabIndex = 0;
             // 
             // prezzo
             // 
-            this.prezzo.Location = new System.Drawing.Point(50, 137);
+            this.prezzo.Location = new System.Drawing.Point(41, 116);
             this.prezzo.Name = "prezzo";
             this.prezzo.Size = new System.Drawing.Size(100, 20);
             this.prezzo.TabIndex = 1;
@@ -68,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 79);
+            this.label1.Location = new System.Drawing.Point(38, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
@@ -77,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 120);
+            this.label2.Location = new System.Drawing.Point(38, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 3;
@@ -85,7 +87,7 @@
             // 
             // salva
             // 
-            this.salva.Location = new System.Drawing.Point(50, 163);
+            this.salva.Location = new System.Drawing.Point(41, 142);
             this.salva.Name = "salva";
             this.salva.Size = new System.Drawing.Size(100, 23);
             this.salva.TabIndex = 4;
@@ -107,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 21);
+            this.label3.Location = new System.Drawing.Point(21, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(294, 39);
             this.label3.TabIndex = 6;
@@ -115,7 +117,7 @@
             // 
             // cancella
             // 
-            this.cancella.Location = new System.Drawing.Point(50, 192);
+            this.cancella.Location = new System.Drawing.Point(41, 171);
             this.cancella.Name = "cancella";
             this.cancella.Size = new System.Drawing.Size(100, 23);
             this.cancella.TabIndex = 7;
@@ -125,7 +127,7 @@
             // 
             // modifica
             // 
-            this.modifica.Location = new System.Drawing.Point(50, 221);
+            this.modifica.Location = new System.Drawing.Point(41, 200);
             this.modifica.Name = "modifica";
             this.modifica.Size = new System.Drawing.Size(100, 23);
             this.modifica.TabIndex = 8;
@@ -168,7 +170,7 @@
             // 
             // Ordina
             // 
-            this.Ordina.Location = new System.Drawing.Point(50, 250);
+            this.Ordina.Location = new System.Drawing.Point(41, 229);
             this.Ordina.Name = "Ordina";
             this.Ordina.Size = new System.Drawing.Size(100, 23);
             this.Ordina.TabIndex = 13;
@@ -178,7 +180,7 @@
             // 
             // SommaPrezzi
             // 
-            this.SommaPrezzi.Location = new System.Drawing.Point(50, 279);
+            this.SommaPrezzi.Location = new System.Drawing.Point(41, 258);
             this.SommaPrezzi.Name = "SommaPrezzi";
             this.SommaPrezzi.Size = new System.Drawing.Size(100, 23);
             this.SommaPrezzi.TabIndex = 14;
@@ -188,7 +190,7 @@
             // 
             // perc
             // 
-            this.perc.Location = new System.Drawing.Point(50, 308);
+            this.perc.Location = new System.Drawing.Point(41, 287);
             this.perc.Name = "perc";
             this.perc.Size = new System.Drawing.Size(100, 23);
             this.perc.TabIndex = 15;
@@ -224,7 +226,7 @@
             // 
             // SalvaFile
             // 
-            this.SalvaFile.Location = new System.Drawing.Point(50, 337);
+            this.SalvaFile.Location = new System.Drawing.Point(41, 316);
             this.SalvaFile.Name = "SalvaFile";
             this.SalvaFile.Size = new System.Drawing.Size(100, 23);
             this.SalvaFile.TabIndex = 19;
@@ -234,7 +236,7 @@
             // 
             // LeggiFile
             // 
-            this.LeggiFile.Location = new System.Drawing.Point(50, 366);
+            this.LeggiFile.Location = new System.Drawing.Point(41, 345);
             this.LeggiFile.Name = "LeggiFile";
             this.LeggiFile.Size = new System.Drawing.Size(100, 23);
             this.LeggiFile.TabIndex = 20;
@@ -242,11 +244,33 @@
             this.LeggiFile.UseVisualStyleBackColor = true;
             this.LeggiFile.Click += new System.EventHandler(this.LeggiFile_Click);
             // 
+            // Minimo
+            // 
+            this.Minimo.Location = new System.Drawing.Point(41, 374);
+            this.Minimo.Name = "Minimo";
+            this.Minimo.Size = new System.Drawing.Size(100, 23);
+            this.Minimo.TabIndex = 21;
+            this.Minimo.Text = "Minimo";
+            this.Minimo.UseVisualStyleBackColor = true;
+            this.Minimo.Click += new System.EventHandler(this.Minimo_Click);
+            // 
+            // Massimo
+            // 
+            this.Massimo.Location = new System.Drawing.Point(41, 403);
+            this.Massimo.Name = "Massimo";
+            this.Massimo.Size = new System.Drawing.Size(100, 23);
+            this.Massimo.TabIndex = 22;
+            this.Massimo.Text = "Massimo";
+            this.Massimo.UseVisualStyleBackColor = true;
+            this.Massimo.Click += new System.EventHandler(this.Massimo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Massimo);
+            this.Controls.Add(this.Minimo);
             this.Controls.Add(this.LeggiFile);
             this.Controls.Add(this.SalvaFile);
             this.Controls.Add(this.invperc);
@@ -299,6 +323,8 @@
         private System.Windows.Forms.Button invperc;
         private System.Windows.Forms.Button SalvaFile;
         private System.Windows.Forms.Button LeggiFile;
+        private System.Windows.Forms.Button Minimo;
+        private System.Windows.Forms.Button Massimo;
     }
 }
 
